@@ -1,4 +1,4 @@
-from .core import create_note, open_note, list_notes
+from .core import create_note, delete_note, open_note, list_notes
 from .config import Config
 from .paths import NOTES_PATH
 import json
@@ -9,7 +9,7 @@ new_id = str(uuid4())
 
 def main():
     parser = ArgumentParser(usage='pystickynote <open/create/list> <name/all>')
-    parser.add_argument('action', choices=['open', 'create', 'list'], help='Action to run. Either "open" or "create".')
+    parser.add_argument('action', choices=['open', 'create', 'delete', 'list'], help='Choose action to take.')
     parser.add_argument('name', help='Stickynote\'s name to save to', nargs='?', default=new_id)
     args = parser.parse_args()
     config = Config()
@@ -24,6 +24,11 @@ def main():
                         print('Note with that name found, please use the open command to edit/delete.')
                         exit(1)
             create_note(args.name, config)
+    elif args.action == 'delete':
+        if args.name == new_id:
+            print('Please Provide The Name of The Note.')
+        else:
+            delete_note(args.name)
     elif args.action == 'open':
         if args.name == new_id:
             print('Please Provide The Name of The Note.')

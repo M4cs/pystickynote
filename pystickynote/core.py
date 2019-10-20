@@ -105,3 +105,14 @@ def list_notes():
         print('Available Notes:\n')
         for k, v in obj.items():
             print(k)
+def delete_note(name):
+    with open(NOTES_PATH, "r+") as json_file:
+        obj = json.load(json_file)
+    try:
+        del obj[name]
+        print('Deleted note "{}".'.format(name))
+    except KeyError:
+        print('No note found with name "{}"'.format(name))
+
+    with open(NOTES_PATH, "w") as json_file:
+        json_file.write(json.dumps(obj, indent=4))
