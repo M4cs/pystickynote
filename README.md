@@ -30,7 +30,11 @@ pystickynote list # Displays all notes
 
 # Configuration
 
-Config files and notes can be found in `~/.config/pystickynote/`. Inside this folder you will find `pysn.conf` and `notes.json`. The config file looks something like this:
+Config files and notes can be found in `~/.config/pystickynote/`. Inside this folder you will find `pysn.conf` and `notes.json`.
+
+You can also find the default config and notes file in this repository.
+
+The config file looks something like this:
 
 ```
 [DEFAULT]
