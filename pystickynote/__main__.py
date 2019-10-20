@@ -4,7 +4,7 @@ from .config import Config
 from argparse import ArgumentParser
 
 def main():
-    parser = ArgumentParser(usage='pystickynote name [OPTIONS]')
+    parser = ArgumentParser(usage='pystickynote <open/create> <name>')
     parser.add_argument('action', choices=['open', 'create'], help='Action to run. Either "open" or "create".')
     parser.add_argument('name', help='Stickynote\'s name to save to', type=str)
     args = parser.parse_args()

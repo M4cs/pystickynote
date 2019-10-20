@@ -4,14 +4,11 @@ import shutil, os
 
 setup(
     name='pystickynote',
-    version='1.1.1',
+    version='1.2.1',
     author='Max Bridgland',
     author_email='mabridgland@protonmail.com',
     description='Easy Sticky Note Widgets',
-    long_description="""\
-# PyStickynote
-
-### Easily give yourself a sticky note to write to and load using PySimpleGUI. Customization options for background_color, text_color, and alpha!""",
+    long_description=open('README.md', 'r').read(),
     long_description_content_type='text/markdown',
     url='https://github.com/M4cs/pystickynote',
     packages=['pystickynote'],
