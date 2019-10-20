@@ -2,6 +2,12 @@
 
 Stickynotes for your desktop easily from the command line! Built using [PySimpleGUI](http://pysimplegui.com)
 
+# Preview
+
+<p align="center">
+  <a><img src="https://github.com/M4cs/pystickynote/blob/master/preview.png?raw=true"></a>
+</p>
+
 # How does it work?
 
 Pystickynote creates a small QT window for you to jot your ideas down and then display them later on all with a command line tool. On top of that, the note itself is fully customizable allowing you to change colors, alpha, and borders.
@@ -24,7 +30,11 @@ pystickynote list # Displays all notes
 
 # Configuration
 
-Config files and notes can be found in `~/.config/pystickynote/`. Inside this folder you will find `pysn.conf` and `notes.json`. The config file looks something like this:
+Config files and notes can be found in `~/.config/pystickynote/`. Inside this folder you will find `pysn.conf` and `notes.json`.
+
+You can also find the default config and notes file in this repository.
+
+The config file looks something like this:
 
 ```
 [DEFAULT]
