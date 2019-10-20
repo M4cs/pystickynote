@@ -4,7 +4,7 @@ import shutil, os
 
 setup(
     name='pystickynote',
-    version='1.2.1',
+    version='1.3',
     author='Max Bridgland',
     author_email='mabridgland@protonmail.com',
     description='Easy Sticky Note Widgets',
