@@ -12,7 +12,7 @@ else:
 def open_note(name, config):
     g.SetOptions(background_color=config.background_color, text_color=config.text_color,
                  input_elements_background_color=config.background_color, input_text_color=config.text_color,
-                 button_color=(config.text_color, config.background_color), border_width=config.border_width)
+                 button_color=(config.text_color, config.background_color), border_width=config.border_width, font=('Arial', int(config.font_size)))
     with open(NOTES_PATH, 'r+') as notes:
         note_obj = json.load(notes)
         match = False
@@ -25,7 +25,7 @@ def open_note(name, config):
         print('No Note Found With That Name')
         exit(1)
     layout = [
-        [g.T(name, font=('Arial', 8), justification='center')],
+        [g.T(name, font=('Arial', int(config.title_size)), justification='center')],
         [g.Multiline(content, size=(50, 5), key='content')],
         [g.B('Close'), g.B('Delete'), g.B('Save')]
     ]

@@ -11,9 +11,9 @@ else:
 def create_note(name, config):
     g.SetOptions(background_color=config.background_color, text_color=config.text_color,
                  input_elements_background_color=config.background_color, input_text_color=config.text_color,
-                 button_color=(config.text_color, config.background_color), border_width=config.border_width)
+                 button_color=(config.text_color, config.background_color), border_width=config.border_width, font=('Arial', int(config.font_size)))
     layout = [
-        [g.T('Create Note', font=('Arial', 8), justification='center')],
+        [g.T('Create Note', font=('Arial', int(config.title_size)), justification='center')],
         [g.Multiline('', size=(50, 5), key='content')],
         [g.B('Close'), g.B('Save')]
     ]

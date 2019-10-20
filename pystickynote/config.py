@@ -7,7 +7,9 @@ example_config = """\
 background_color = #454545
 text_color = #fafafa
 alpha = 0.8
-border_width = 0"""
+border_width = 0
+title_size = 8
+font_size = 10"""
 
 class Config:
     def __init__(self):
@@ -26,3 +28,5 @@ class Config:
         self.text_color = self.config_dict['text_color']
         self.alpha = self.config_dict['alpha']
         self.border_width = self.config_dict['border_width']
+        self.font_size = self.config_dict['font_size']
+        self.title_size = self.config_dict['title_size']
