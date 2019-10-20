@@ -18,6 +18,8 @@ pip3 install pystickynote
 pystickynote create <name_of_note> # Displays stickynote window
 
 pystickynote open <name_of_note> # Displays old stickynote
+
+pystickynote list # Displays all notes
 ```
 
 # Configuration
