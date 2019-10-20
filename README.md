@@ -1,6 +1,6 @@
 # pystickynote
 
-Stickynotes for your desktop easily from the command line! Built using [PySimlpleGUI](https://pysimplegui.com)
+Stickynotes for your desktop easily from the command line! Built using [PySimlpleGUI](http://pysimplegui.com)
 
 # How does it work?
 
