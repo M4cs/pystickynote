@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # pystickynote
 
 Stickynotes for your desktop easily from the command line! Built using [PySimlpleGUI](http://pysimplegui.com)
@@ -42,4 +40,4 @@ title_size = 8
 `border_width` = border around input box and buttons
 `font_size` = font size for text
 `title_size` = font size for title
->>>>>>> 939218dfaf25e6acb2e7d3ca30af86d89a3418e8
+
