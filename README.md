@@ -21,12 +21,26 @@ pip3 install pystickynote
 # Running It
 
 ```
-pystickynote create <name_of_note> # Displays stickynote window
+<pystickynote/pysn> create <name_of_note> # Displays stickynote window
 
-pystickynote open <name_of_note> # Displays old stickynote
+<pystickynote/pysn> open <name_of_note> # Displays old stickynote
 
-pystickynote list # Displays all notes
+<pystickynote/pysn> delete <name_of_note> # Deletes stickynote
+
+<pystickynote/pysn> list # Displays all notes
 ```
+
+# Changelog
+
+### Update 1.5:
+
+- Added new entry point: `pysn`
+
+- Added delete function thanks to @synackray
+
+- Fixed error with mouse_offset (possibly still buggy)
+
+- New local version of PySimpleGUIQt for that ^
 
 # Configuration
 
