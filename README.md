@@ -30,9 +30,13 @@ background_color = #454545
 text_color = #fafafa
 alpha = 0.8
 border_width = 0
+font_size = 10
+title_size = 8
 ```
 
 `background_color` = the background hex color for the note
 `text_color` = the text color for the note
 `alpha` = the note window's alpha
 `border_width` = border around input box and buttons
+`font_size` = font size for text
+`title_size` = font size for title
