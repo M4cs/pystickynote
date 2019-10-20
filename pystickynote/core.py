@@ -1,5 +1,5 @@
 from pystickynote.paths import NOTES_PATH
-import PySimpleGUIQt as g
+from pystickynote.lib import PySimpleGUIQt as g
 import sys
 import json
 
@@ -32,39 +32,42 @@ def open_note(name, config):
     window = g.Window('Create', no_titlebar=NTB, keep_on_top=True, grab_anywhere=True, layout=layout, alpha_channel=float(config.alpha))
     
     while True:
-        event, value = window.Read()
-        if event == 'Close':
-            window.Close()
-            break
-        elif event == 'Save':
-            note_obj[name] = value['content']
-            with open(NOTES_PATH, 'r+') as notes:
-                notes.seek(0)
-                notes.truncate()
-                json.dump(note_obj, notes, indent=4)
-            window.Close()
-            break
-        elif event == 'Delete':
-            new_layout = [
-                [g.T('Are you sure you want to delete {}?'.format(name), justification='center')],
-                [g.B('No'), g.B('Yes')]
-            ]
-            confirm_window = g.Window('', no_titlebar=NTB, keep_on_top=True, grab_anywhere=True, layout=new_layout)
-            while True:
-                event1, value1 = confirm_window.Read()
-                if event1 == 'Yes':
-                    note_obj.pop(name, [])
-                    with open(NOTES_PATH, 'r+') as notes:
-                        notes.seek(0)
-                        notes.truncate()
-                        json.dump(note_obj, notes, indent=4)
-                    confirm_window.Close()
-                    break
-                else:
-                    confirm_window.Close()
-                    break
-            window.Close()
-            break
+        try:
+            event, value = window.Read()
+            if event == 'Close':
+                window.Close()
+                break
+            elif event == 'Save':
+                note_obj[name] = value['content']
+                with open(NOTES_PATH, 'r+') as notes:
+                    notes.seek(0)
+                    notes.truncate()
+                    json.dump(note_obj, notes, indent=4)
+                window.Close()
+                break
+            elif event == 'Delete':
+                new_layout = [
+                    [g.T('Are you sure you want to delete {}?'.format(name), justification='center')],
+                    [g.B('No'), g.B('Yes')]
+                ]
+                confirm_window = g.Window('', no_titlebar=NTB, keep_on_top=True, grab_anywhere=True, layout=new_layout)
+                while True:
+                    event1, value1 = confirm_window.Read()
+                    if event1 == 'Yes':
+                        note_obj.pop(name, [])
+                        with open(NOTES_PATH, 'r+') as notes:
+                            notes.seek(0)
+                            notes.truncate()
+                            json.dump(note_obj, notes, indent=4)
+                        confirm_window.Close()
+                        break
+                    else:
+                        confirm_window.Close()
+                        break
+                window.Close()
+                break
+        except:
+            pass
                 
 def create_note(name, config):
     g.SetOptions(background_color=config.background_color, text_color=config.text_color,
@@ -77,21 +80,24 @@ def create_note(name, config):
     ]
     window = g.Window('Create', no_titlebar=NTB, keep_on_top=True, grab_anywhere=True, layout=layout, alpha_channel=float(config.alpha))
     while True:
-        event, value = window.Read()
-        if event == 'Close':
-            window.Close()
-            break
-        elif event == 'Save':
-            with open(NOTES_PATH, 'r+') as notes:
-                note_obj = json.load(notes)
-                note_obj.update({
-                    name: value['content']
-                })
-                notes.seek(0)
-                notes.truncate()
-                json.dump(note_obj, notes, indent=4)
-            window.Close()
-            break
+        try:
+            event, value = window.Read()
+            if event == 'Close':
+                window.Close()
+                break
+            elif event == 'Save':
+                with open(NOTES_PATH, 'r+') as notes:
+                    note_obj = json.load(notes)
+                    note_obj.update({
+                        name: value['content']
+                    })
+                    notes.seek(0)
+                    notes.truncate()
+                    json.dump(note_obj, notes, indent=4)
+                window.Close()
+                break
+        except:
+            pass
         
 def list_notes():
     with open(NOTES_PATH, 'r+') as json_file:

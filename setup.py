@@ -4,14 +4,14 @@ import shutil, os
 
 setup(
     name='pystickynote',
-    version='1.3',
+    version='1.4',
     author='Max Bridgland',
     author_email='mabridgland@protonmail.com',
     description='Easy Sticky Note Widgets',
     long_description=open('README.md', 'r').read(),
     long_description_content_type='text/markdown',
     url='https://github.com/M4cs/pystickynote',
-    packages=['pystickynote'],
+    packages=find_packages(),
     install_requires=[
         'PySimpleGUIQt',
         'PyQt5',
@@ -25,6 +25,7 @@ setup(
     entry_points={
         'console_scripts':[
             'pystickynote = pystickynote.__main__:main',
+            'pysn = pystickynote.__main__:main'
         ],
     },
     classifiers=[  # Used by PyPI to classify the project and make it searchable
