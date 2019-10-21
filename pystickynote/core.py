@@ -25,7 +25,7 @@ def open_note(name, config):
         exit(1)
     layout = [
         [g.T(name, font=('Arial', int(config.title_size)), justification='center')],
-        [g.Multiline(content, size=(50, 5), key='content')],
+        [g.Multiline(content, size=(int(config.width), int(config.height)), key='content')],
         [g.B('Close'), g.B('Delete'), g.B('Save')]
     ]
     
@@ -75,7 +75,7 @@ def create_note(name, config):
                  button_color=(config.text_color, config.background_color), border_width=config.border_width, font=('Arial', int(config.font_size)))
     layout = [
         [g.T('Create Note', font=('Arial', int(config.title_size)), justification='center')],
-        [g.Multiline('', size=(50, 5), key='content')],
+        [g.Multiline('', size=(int(config.width), int(config.height)), key='content')],
         [g.B('Close'), g.B('Save')]
     ]
     window = g.Window('Create', no_titlebar=NTB, keep_on_top=True, grab_anywhere=True, layout=layout, alpha_channel=float(config.alpha))

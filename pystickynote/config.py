@@ -9,7 +9,9 @@ text_color = #fafafa
 alpha = 0.8
 border_width = 0
 title_size = 8
-font_size = 10"""
+font_size = 10
+box_height = 5
+box_width = 50"""
 
 class Config:
     def __init__(self):
@@ -30,3 +32,13 @@ class Config:
         self.border_width = self.config_dict['border_width']
         self.font_size = self.config_dict['font_size']
         self.title_size = self.config_dict['title_size']
+        try:
+            self.height = self.config_dict['box_height']
+            self.width = self.config_dict['box_width']
+        except KeyError:
+            self.config['DEFAULT']['box_height'] = '5'
+            self.config['DEFAULT']['box_width'] = '50'
+            with open(CONFIG_PATH, 'w') as config_file:
+                self.config.write(config_file)
+            self.height = self.config_dict['box_height']
+            self.width = self.config_dict['box_width']

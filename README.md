@@ -32,6 +32,10 @@ pip3 install pystickynote
 
 # Changelog
 
+### Update 1.5.1:
+
+- Added box_height and box_width values to config
+
 ### Update 1.5:
 
 - Added new entry point: `pysn`
