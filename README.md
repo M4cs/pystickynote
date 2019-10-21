@@ -2,6 +2,8 @@
 
 Stickynotes for your desktop easily from the command line! Built using [PySimpleGUI](http://pysimplegui.com)
 
+[Join My Discord/Support Discord](https://discord.gg/C7jgQeN)
+
 # Preview
 
 <p align="center">
