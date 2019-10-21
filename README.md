@@ -60,8 +60,10 @@ background_color = #454545
 text_color = #fafafa
 alpha = 0.8
 border_width = 0
-font_size = 10
 title_size = 8
+font_size = 10
+box_height = 5
+box_width = 50
 ```
 
 `background_color` = the background hex color for the note
@@ -75,5 +77,9 @@ title_size = 8
 `font_size` = font size for text
 
 `title_size` = font size for title
+
+`box_height` = height of box
+
+`box_width` = width of box
 
 
